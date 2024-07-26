@@ -23,8 +23,16 @@ spring:
     properties:
       hibernate.format_sql: true  # 쿼리가 훨씬 보기 좋게 정렬되어 로그 찍힌다
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
 
+# JWT secret 값 설정
+# HS256 의 경우 256bit를 암호화 할수 있을만큼 충분히 긴 암호 설정해주면 된다.
 
+# HS512 알고리즘의 시크릿키 : 512비트 (64바이트) 이상
+# https://passwords-generator.org/kr/
+# ✅ 위 사이트에서 길이:64 로 생성함.
+
+jwt:
+  secret: SuqlZs16mU7omf$HRW7e6EXPOE$EX@IRlDKK$Xi3L#bU%2Jp1CZAumnkIs7F-XDP
 
 
