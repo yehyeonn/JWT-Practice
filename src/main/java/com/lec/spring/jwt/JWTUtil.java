@@ -39,13 +39,13 @@ public class JWTUtil {
 
     //------------------------------------------------------------------
     // JWT token 에서 내용 확인
-    public Integer getId(String token){
+    public Long getId(String token){
         return Jwts.parser()   // parser 객체 만들기
                 .verifyWith(secretKey)
                 .build()
                 .parseSignedClaims(token)   // token에서
                 .getPayload()               // Claims 가져오고
-                .get("id", Integer.class);        // 그 중 id 를 가져옴
+                .get("id", Long.class);        // 그 중 id 를 가져옴
     }
 
     public String getUsername(String token) {  // username 확인

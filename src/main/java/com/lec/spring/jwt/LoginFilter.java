@@ -71,9 +71,9 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter { // filte
                 .map(grantedAuthority -> grantedAuthority.getAuthority())
                 .collect(Collectors.joining(","));
 
-        String token = jwtUtil.createJwt(id, username, role, 60 * 60 * 10L);
+        String token = jwtUtil.createJwt(id, username, role, 60 * 60 * 10000L);
 
-        response.addHeader("Authorization", "Bearer " + token); // "Authorization", "Bearer " 이건 정해진 값! Bearer 뒤에 꼭 ' '!!
+        response.addHeader("Authorization", "Bearer " + token); // "Authorization" 헤더, "Bearer " 이건 정해진 값! Bearer 뒤에 꼭 ' '!!
 
     }
 

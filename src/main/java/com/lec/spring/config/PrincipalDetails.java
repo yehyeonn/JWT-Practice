@@ -31,6 +31,7 @@ public class PrincipalDetails implements UserDetails /* , OAuth2User */ {
         Collection<GrantedAuthority> collect = new ArrayList<>();
 
         // user.getRole() 은 현재 "ROLE_MEMBER,ROLE_ADMIN" 과 같은 형태이기에
+        if(user.getRole() == null) return collect;
 
         Arrays.stream(user.getRole().split(","))
                 .forEach(auth -> collect.add(new GrantedAuthority() {

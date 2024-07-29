@@ -35,4 +35,6 @@ spring:
 jwt:
   secret: SuqlZs16mU7omf$HRW7e6EXPOE$EX@IRlDKK$Xi3L#bU%2Jp1CZAumnkIs7F-XDP
 
-
+# cors 관련 설정 값들 , 사이에 띄어쓰기 X
+cors:
+  allowed-origins: http://localhost:3000,http://localhost:3001

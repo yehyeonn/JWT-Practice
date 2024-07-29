@@ -1,7 +1,10 @@
 package com.lec.spring.controller;
 
 
+import com.lec.spring.config.PrincipalDetails;
+import com.lec.spring.domain.User;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,5 +34,9 @@ public class HomeController {
         return SecurityContextHolder.getContext().getAuthentication();
     }
 
-
+    // 세션 정보 보기
+    @RequestMapping("/user")
+    public User user(@AuthenticationPrincipal PrincipalDetails userDetails){
+        return (userDetails != null) ? userDetails.getUser() : null;
+    }
 }

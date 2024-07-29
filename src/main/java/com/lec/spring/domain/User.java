@@ -19,6 +19,7 @@ public class User {
     @Column(unique = true, nullable = false)
     private String username;
     @Column(nullable = false)
+    @JsonIgnore
     private String password;
     private String role;        // "ROLE_MEMBER" , "ROLE_MEMBER,ROLE_ADMIN"
 }
